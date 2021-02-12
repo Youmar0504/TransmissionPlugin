@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+        <card>
+            <title>Basic Configuration</title>
+            <title lang="de-DE">Grundeinstellungen</title>
+            <input-field>
+                <name>destination</name>
+                <copyable>true</copyable>
+                <label>destination</label>
+                <label lang="de-DE">kennung</label>
+                <placeholder>Exact</placeholder>
+                <helpText>Here comes the destination of the orders</helpText>
+                <helpText lang="de-DE">Hier kommt das Ziel der Bestellungen</helpText>
+            </input-field>
+            <input-field type="single-select">
+                <name>sendOrderAfterCheckout</name>
+                <options>
+                    <option>
+                        <id>TRUE</id>
+                        <name>TRUE</name>
+                    </option>
+                    <option>
+                        <id>FALSE</id>
+                        <name>FALSE</name>
+                    </option>
+                </options>
+		<defaultValue>TRUE</defaultValue>
+            	<label>sendOrderAfterCheckout</label>
+		<helpText>Is the order sent after checkout ?</helpText>
+            </input-field>
+        </card>
+</config>

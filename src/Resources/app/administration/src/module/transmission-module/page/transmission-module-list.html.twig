@@ -1,0 +1,12 @@
+<template slot="content">
+    {% block transmission_module_list_content %}
+        <sw-entity-listing
+            v-if="bundles"
+            :items="bundles"
+            :repository="repository"
+            :showSelection="false"
+            :columns="columns"
+            detailRoute="transmission.module.detail">
+        </sw-entity-listing>
+    {% endblock %}
+</template>

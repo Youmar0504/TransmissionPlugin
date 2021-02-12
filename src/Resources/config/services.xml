@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+	 <service id="Emakers\TransmissionPlugin\Storefront\Controller\AccountsController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+		<argument type="service" id="customer.repository"/>
+		<argument type="service" id="transmission.repository"/>
+            </call>
+        </service>
+	<service id="Emakers\TransmissionPlugin\Storefront\Controller\OrderStatusController" public="true">
+		<argument type="service" id="order.repository"/>
+                <argument type="service" id="Shopware\Core\System\StateMachine\StateMachineRegistry" />
+		<argument type="service" id="order_delivery.repository"/>
+		<argument type="service" id="state_machine.repository"/>
+                <argument type="service" id="state_machine_state.repository"/>
+        </service>
+	<service id="Emakers\TransmissionPlugin\Storefront\Controller\StockPositionsController" public="true">
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+		<argument type="service" id="product.repository"/>
+		<argument type="service" id="transmission.repository"/>
+            </call>
+        </service>
+
+	<service id="Emakers\TransmissionPlugin\Command\StockUpdateCommand"> 
+		<tag name="console.command"/>
+		<argument type="service" id="service_container"/>
+		<argument type="service" id="transmission.repository"/>
+	</service>
+
+	<service id="Emakers\TransmissionPlugin\Command\RefreshTokenCommand">
+                <tag name="console.command"/>
+		<argument type="service" id="transmission_log.repository"/>
+        </service>
+
+
+	<service id="Emakers\TransmissionPlugin\Subscriber\OrderSubscriber" public="true">
+	    <argument type="service" id="service_container"/>
+	    <argument type="service" id="state_machine_state.repository"/>
+	    <argument type="service" id="order.repository"/>
+	    <argument type="service" id="shipping_method.repository"/>
+	    <argument type="service" id="transmission.repository"/>
+	    <argument type="service" id="transmission_log.repository"/>
+	    <tag name="kernel.event_listener" />
+            <tag name="kernel.event_subscriber" />
+        </service>
+	
+	 <service id="Emakers\TransmissionPlugin\Entity\TransmissionEntityDefinition">
+            <tag name="shopware.entity.definition" entity="transmission" />
+        </service>
+
+	<service id="Emakers\TransmissionPlugin\Entity\TransmissionLogEntityDefinition">
+            <tag name="shopware.entity.definition" entity="transmission_log" />
+        </service>
+
+	<service id="Emakers\TransmissionPlugin\Services\GettingInfoServices" public="true">
+            <argument type="service" id="service_container"/>
+        </service>
+	<service id="Emakers\TransmissionPlugin\Services\ExactDataService" public="true">
+            <argument type="service" id="service_container"/>
+        </service>
+    </services>
+
+</container>

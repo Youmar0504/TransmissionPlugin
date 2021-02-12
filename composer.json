@@ -1,0 +1,34 @@
+{
+    "name": "emakers/transmission-plugin",
+    "description": "Connection with Exact Online.",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "EMAKERS Z. Umar"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.*"
+    },
+    "extra": {
+        "shopware-plugin-class": "Emakers\\TransmissionPlugin\\TransmissionPlugin",
+	"copyright": "(c) by EMAKERS",
+        "label": {
+            "de-DE": "TransMission",
+            "en-GB": "TransMission"
+        },
+    
+    	"description": {
+		"en-GB": "This plugin was developed by EMAKERS. If you believe it does not match the quality you expected or you have special needs, please don’t hesitate to contact our support through your Shopware support panel (recommended) or directly at support@emakers.be. Here is the EMAKERS profile : https://store.shopware.com/en/emakers.html.",
+		"de-DE": "Dieses Plugin wurde von EMAKERS entwickelt. Wenn Sie der Meinung sind, dass es nicht der von Ihnen erwarteten Qualität entspricht oder Sie spezielle Anforderungen haben, zögern Sie bitte nicht, unseren Support über Ihr Shopware-Support-Panel (empfohlen) oder direkt unter support@emakers.be zu kontaktieren. Hier ist das EMAKERS-Profil : https://store.shopware.com/en/emakers.html." 
+    	}
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Emakers\\TransmissionPlugin\\": "src/"
+        }
+    }
+}

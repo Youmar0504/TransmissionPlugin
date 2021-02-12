@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin>
+    <label lang="de">Nachricht senden</label>
+	<label lang="en">Send Message and Logs</label>
+ 
+    <version>1.0.0</version>
+    <author>EMAKERS</author>
+    <copyright>(c) 2019 EMAKERS</copyright>
+    <license>Proprietär</license>
+    <link></link>
+    <description></description>
+    <compatibility minVersion="5.2.16" />
+    <changelog version="1.0.0">
+        <changes lang="en">Initial upload of plugin</changes>
+        <changes lang="de">Initialer Upload des Plugins</changes>
+    </changelog>
+</plugin>
